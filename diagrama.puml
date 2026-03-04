@@ -1,0 +1,64 @@
+class Menu
+class Personaje{
+    + Carga
+}
+class Tiempo
+class Naruto{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Ichigo{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Ippo{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Baki{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Saitama{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Asta{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Goku{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Mob{
+    + Quinto
+    + Doble
+    + Especial
+}
+class Interfas
+
+Interfas
+
+Menu o-- Jugador1
+Menu o-- Jugador2
+
+Personaje "0" *-- "5" Carga
+Personaje "5" *-- "15" Quinto
+Personaje "10" *-- "30" Doble
+Personaje "20" *-- "50" Especial
+Personaje "5" *-- "20" Patadafuerte
+Personaje "10" *-- "15" Patadaleve
+Personaje "15" *-- "20" Golpefuerte
+Personaje "5" *-- "10" Golpeleve
+Personaje "5" *-- "50" Daño
+Personaje "0" *-- "100" Vida
+Personaje "1" o-- "2" Ayuda
+tiempo "0" *-- "60" Segundos
