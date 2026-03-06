@@ -1,64 +1,76 @@
-class Menu
+@startuml King Of Figther a mi estilo
+
 class Personaje{
     + Carga
+    + Vida
+    + Energia
 }
-class Tiempo
-class Naruto{
-    + Quinto
-    + Doble
-    + Especial
+class Partida
+class Ronda
+class Temporizador
+class EstadoJuego
+class Jugador{
+    + Jugador1
+    + Jugador2
 }
-class Ichigo{
-    + Quinto
-    + Doble
-    + Especial
+class JugadorHumano
+class JugadorCPU
+class Equipo
+class ControlEntrada{
+    - palanca
+    - botonA
+    - botonB
+    - botonC
+    - botonD
+    + moverIzquierda()
+    + moverDerecha()
+    + moverArriba()
+    + moverAbajo()
+    + presionarBotonA()
+    + presionarBotonB()
+    + presionarBotonC()
+    + presionarBotonD()
 }
-class Ippo{
-    + Quinto
-    + Doble
-    + Especial
-}
-class Baki{
-    + Quinto
-    + Doble
-    + Especial
-}
-class Saitama{
-    + Quinto
-    + Doble
-    + Especial
-}
-class Asta{
-    + Quinto
-    + Doble
-    + Especial
-}
-class Goku{
-    + Quinto
-    + Doble
-    + Especial
-}
-class Mob{
-    + Quinto
-    + Doble
-    + Especial
-}
-class Interfas
+class SeleccionPersonaje
+class Personaje
+class EstadisticasPersonaje
+class EstadoPersonaje
+class AnimacionPersonaje
+class Habilidad
+class PatadaFuerte
+class PatadaLeve
+class GolpeFuerte
+class GolpeLeve
+class SistemaCombate
+class SistemaColisiones
+class ObjetoGolpe
+class ObjetoDaño
+class SistemaDaño
+class SistemaCombo
+class Escenario
+class Fondo
+class ObjetoEscenario
 
-Interfas
 
-Menu o-- Jugador1
-Menu o-- Jugador2
+Jugador *-- ControlEntrada
+Personaje *-- EstadisticasPersonaje
+Personaje *-- EstadoPersonaje
+Personaje *-- AnimacionPersonaje
+Personaje *-- Habilidad
+PatadaFuerte --|> Habilidad
+PatadaLeve --|> Habilidad
+GolpeFuerte --|> Habilidad
+GolpeLeve --|> Habilidad
+SistemaCombate *-- SistemaColisiones
+SistemaCombate *-- SistemaDaño
+SistemaCombate *-- SistemaCombo
+SistemaColisiones *-- ObjetoGolpe
+SistemaColisiones *-- ObjetoDaño
+Personaje *-- SistemaCombate
 
-Personaje "0" *-- "5" Carga
-Personaje "5" *-- "15" Quinto
-Personaje "10" *-- "30" Doble
-Personaje "20" *-- "50" Especial
-Personaje "5" *-- "20" Patadafuerte
-Personaje "10" *-- "15" Patadaleve
-Personaje "15" *-- "20" Golpefuerte
-Personaje "5" *-- "10" Golpeleve
-Personaje "5" *-- "50" Daño
+Partida "1" *-- "1..2" Jugador
+Jugador "1" *-- "3" Personaje
+Partida "1" *-- "1..6" Ronda
+Personaje "0" *-- "5" Energia
 Personaje "0" *-- "100" Vida
-Personaje "1" o-- "2" Ayuda
-tiempo "0" *-- "60" Segundos
+Temporizador "0" *-- "60" Segundos
